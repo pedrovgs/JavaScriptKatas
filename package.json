@@ -8,7 +8,7 @@
   "license": "GPL-3.0",
   "private": false,
   "scripts": {
-    "test": "jest"    
+    "test": "mocha"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -17,16 +17,23 @@
     "babel-preset-env": "^1.6.1",
     "eslint": "^4.10.0",
     "eslint-config-prettier": "^2.7.0",
-    "eslint-loader": "^1.9.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-prettier": "^2.3.1",
-    "jest": "^21.2.1",
+    "mocha": "^4.0.1",
     "prettier": "^1.7.4",
     "prettier-eslint-cli": "^4.4.0",
     "webpack": "^3.8.1"
   },
-  "jest": {
-    "testEnvironment": "node"
+  "standard": {
+    "globals": [
+      "describe",
+      "context",
+      "before",
+      "beforeEach",
+      "after",
+      "afterEach",
+      "it",
+      "expect"
+    ]
   }
-
 }
