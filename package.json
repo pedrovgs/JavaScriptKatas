@@ -1,0 +1,10 @@
+{
+  "name": "JavaScriptKatas",
+  "version": "1.0.0",
+  "description": "JavaScript training repository used to learn and practice by solving some common katas.",
+  "main": "index.js",
+  "repository": "git@github.com:pedrovgs/JavaScriptKatas.git",
+  "author": "pedrovgs <pedrovicente.gomez@gmail.com>",
+  "license": "GPL-3.0",
+  "private": false
+}
