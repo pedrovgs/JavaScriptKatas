@@ -1,5 +1,5 @@
 {
-  "name": "JavaScriptKatas",
+  "name": "javascript-katas",
   "version": "1.0.0",
   "description": "JavaScript training repository used to learn and practice by solving some common katas.",
   "main": "src/index.js",
