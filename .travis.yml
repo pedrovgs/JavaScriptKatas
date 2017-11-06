@@ -6,7 +6,4 @@ before_install:
 
 script:
   - yarn install
-  - yarn eslint src
-  - yarn eslint test
-  - yarn webpack
-  - yarn test
+  - ./build.sh
