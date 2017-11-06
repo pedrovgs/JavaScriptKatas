@@ -8,6 +8,14 @@ JavaScript training repository used to practice and learn by solving some common
 
 ### Executing tests:
 
+### Packaging:
+
+This project uses [webpack](https://webpack.js.org) and [babel](https://babeljs.io) in order to pack a simple ``bundle.js`` file, with all the repository code, fully backward compatible with some old JavaScript versions. If you want to pack all this code into a single file you can easily do it by just running:
+
+```
+yarn webpack
+```
+
 Developed By
 ------------
 
