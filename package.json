@@ -18,22 +18,12 @@
     "eslint": "^4.10.0",
     "eslint-config-prettier": "^2.7.0",
     "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-mocha": "^4.11.0",
     "eslint-plugin-prettier": "^2.3.1",
     "mocha": "^4.0.1",
+    "mocha-eslint": "^4.1.0",
     "prettier": "^1.7.4",
     "prettier-eslint-cli": "^4.4.0",
     "webpack": "^3.8.1"
-  },
-  "standard": {
-    "globals": [
-      "describe",
-      "context",
-      "before",
-      "beforeEach",
-      "after",
-      "afterEach",
-      "it",
-      "expect"
-    ]
   }
 }
