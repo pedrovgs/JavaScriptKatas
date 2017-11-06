@@ -6,5 +6,10 @@
   "repository": "git@github.com:pedrovgs/JavaScriptKatas.git",
   "author": "pedrovgs <pedrovicente.gomez@gmail.com>",
   "license": "GPL-3.0",
-  "private": false
+  "private": false,
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1"
+  }
 }
