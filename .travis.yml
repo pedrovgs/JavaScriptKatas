@@ -7,3 +7,4 @@ before_install:
 script:
   - yarn install
   - yarn webpack
+  - yarn test
