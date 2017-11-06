@@ -16,6 +16,10 @@ This project uses [webpack](https://webpack.js.org) and [babel](https://babeljs.
 yarn webpack
 ```
 
+### Linter:
+
+This repository uses [eslint]() in order to check if the js code written matchers the checkstyle configured. You can check if everything is ok by executing ``yarn eslint src`` and automatically fix the issues by executing ``yarn eslint --fix src`` if needed.
+
 Developed By
 ------------
 
