@@ -5,33 +5,33 @@ describe("`let` restricts the scope of the variable to the current block", () =>
   describe("`let` vs. `var`", () => {
     it("`var` works as usual", () => {
       var varX = false;
-      if (true) {
-        var varX = true;
+      if (true) { // eslint-disable-line
+        var varX = true; // eslint-disable-line
       }
       assert.equal(varX, true);
     });
 
     it("`let` restricts scope to inside the block", () => {
-      if (true) {
-        let letX = true;
+      if (true) { // eslint-disable-line
+        let letX = true; // eslint-disable-line
       }
-      assert.throws(() => console.log(letX));
+      assert.throws(() => console.log(letX)); // eslint-disable-line
     });
   });
 
   describe("`let` usage", () => {
     it("`let` use in `for` loops", () => {
       let obj = { x: 1 };
-      for (let key in obj) {
+      for (let key in obj) { // eslint-disable-line
       }
-      assert.throws(() => console.log(key));
+      assert.throws(() => console.log(key)); // eslint-disable-line
     });
 
     it("create artifical scope, using curly braces", () => {
       {
-        let letX = true;
+        let letX = true; // eslint-disable-line
       }
-      assert.throws(() => console.log(letX));
+      assert.throws(() => console.log(letX)); // eslint-disable-line
     });
   });
 });
