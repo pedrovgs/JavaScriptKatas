@@ -25,14 +25,12 @@ line 4`;
     var x = 42;
 
     it("like simple variables", function() {
-      let x = 42;
       var multiline = `line 1
       ${x}`;
       assert.equal(multiline, "line 1\n      42");
     });
 
     it("also here spaces matter", function() {
-      let x = 42;
       var multiline = `
 ${x}`;
       assert.equal(multiline, "\n42");
