@@ -6,7 +6,17 @@ JavaScript training repository used to practice and learn by solving some common
 
 ### List of katas:
 
+* [ES6 Katas.](http://es6katas.org/)
+
 ### Executing tests:
+
+This project contains some tests written using [Mocha](https://mochajs.org/). You can easily run the tests by executing:
+
+```
+yarn test //Executes every test.
+yarn test -w //Waits for code changes and executes every test.
+yarn test -g "YOUR_REG_EX" //Executes tests matching with the regex passed as param.
+```
 
 ### Packaging:
 
