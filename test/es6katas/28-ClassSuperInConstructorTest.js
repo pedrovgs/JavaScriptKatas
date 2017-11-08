@@ -1,8 +1,7 @@
 // 28: class - super in constructor
 // To do: make all tests pass, leave the assert lines unchanged!
-
+let assert = require("assert");
 describe("class", () => {
-  let assert = require("assert");
   it("if you `extend` a class, use `super()` to call the parent constructor", () => {
     class A {
       constructor() {
