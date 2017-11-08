@@ -3,7 +3,7 @@
 let assert = require("assert");
 describe("inside a class you can use the `static` keyword", () => {
   describe("for methods", () => {
-    class IntegrationTest {}
+    class IntegrationTest {} // eslint-disable-line
     class UnitTest {}
 
     it("a static method just has the prefix `static`", () => {
