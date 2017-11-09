@@ -1,6 +1,6 @@
 // 14: destructuring - parameters
 // To do: make all tests pass, leave the assert lines unchanged!
-let assert = require("assert");
+
 describe("destructuring function parameters", () => {
   describe("destruct parameters", () => {
     it("multiple params from object", () => {

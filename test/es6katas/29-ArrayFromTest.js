@@ -1,6 +1,6 @@
 // 29: array - `Array.from` static method
 // To do: make all tests pass, leave the assert lines unchanged!
-let assert = require("assert");
+
 describe("`Array.from` converts an array-like object or list into an Array", () => {
   const arrayLike = { 0: "one", 1: "two", length: 2 };
 

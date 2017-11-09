@@ -1,6 +1,6 @@
 // 30: array - `Array.of` static method
 // To do: make all tests pass, leave the assert lines unchanged!
-let assert = require("assert");
+
 describe("`Array.of` creates an array with the given arguments as elements", () => {
   it("dont mix it up with `Array(10)`, where the argument is the array length", () => {
     const arr = Array.of(10);

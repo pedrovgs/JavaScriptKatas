@@ -1,6 +1,6 @@
 // 27: class - super inside a method
 // To do: make all tests pass, leave the assert lines unchanged!
-let assert = require("assert");
+
 describe("inside a class use `super` to access parent methods", () => {
   it("use of `super` without `extends` fails (already when transpiling)", () => {
     class A {

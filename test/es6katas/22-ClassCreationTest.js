@@ -1,6 +1,6 @@
 // 22: class - creation
 // To do: make all tests pass, leave the assert lines unchanged!
-let assert = require("assert");
+
 describe("class creation", () => {
   it("is as simple as `class XXX {}`", function() {
     class TestClass {}

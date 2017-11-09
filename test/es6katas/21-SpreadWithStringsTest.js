@@ -1,6 +1,6 @@
 // 21: spread - with-strings
 // To do: make all tests pass, leave the assert lines unchanged!
-let assert = require("assert");
+
 describe("spread with strings", () => {
   it("simply spread each char of a string", function() {
     const [a, b] = [..."ab"];

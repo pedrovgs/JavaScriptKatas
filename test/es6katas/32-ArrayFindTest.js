@@ -1,6 +1,6 @@
 // 32: array - `Array.prototype.find`
 // To do: make all tests pass, leave the assert lines unchanged!
-let assert = require("assert");
+
 describe("`Array.prototype.find` makes finding items in arrays easier", () => {
   it("takes a compare function", function() {
     const found = [false, true].find(item => item === true);

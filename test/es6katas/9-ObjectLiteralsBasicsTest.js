@@ -1,6 +1,6 @@
 // 9: object-literals - basics
 // To do: make all tests pass, leave the assert lines unchanged!
-let assert = require("assert");
+
 describe("The object literal allows for new shorthands", () => {
   const x = 1;
   const y = 2;

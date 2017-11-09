@@ -1,6 +1,6 @@
 // 18: rest - as-parameter
 // To do: make all tests pass, leave the assert lines unchanged!
-let assert = require("assert");
+
 describe("rest in function params", () => {
   it("must be the last parameter", () => {
     const fn = (veryLast, ...rest) => {

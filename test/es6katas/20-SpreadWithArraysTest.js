@@ -1,6 +1,6 @@
 // 20: spread - with-arrays
 // To do: make all tests pass, leave the assert lines unchanged!
-let assert = require("assert");
+
 describe("spread with arrays", () => {
   it("extracts each array item", function() {
     const [a, b] = [...[1, 2]];

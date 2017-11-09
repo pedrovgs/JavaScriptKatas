@@ -1,6 +1,6 @@
 // 19: rest - with-destructuring
 // To do: make all tests pass, leave the assert lines unchanged!
-let assert = require("assert");
+
 describe("rest with destructuring", () => {
   it("rest parameter must be last", () => {
     const [...all] = [1, 2, 3, 4];

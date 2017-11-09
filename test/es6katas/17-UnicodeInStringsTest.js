@@ -1,6 +1,6 @@
 // 17: unicode - in strings
 // To do: make all tests pass, leave the assert lines unchanged!
-let assert = require("assert");
+
 describe("unicode strings", () => {
   it("are \\u prefixed", () => {
     const nuclear = "\u2622";

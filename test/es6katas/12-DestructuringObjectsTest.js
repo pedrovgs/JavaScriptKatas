@@ -1,6 +1,6 @@
 // 12: destructuring - object
 // To do: make all tests pass, leave the assert lines unchanged!
-let assert = require("assert");
+
 describe("destructuring objects", () => {
   it("is simple", () => {
     const { x } = { x: 1 };

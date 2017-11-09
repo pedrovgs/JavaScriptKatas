@@ -4,7 +4,7 @@
 // Consumable users:
 // - `consumableUser` contains a consumable user,
 // - `anyLeft` tells if there is any user left that can be consumed.
-let assert = require("assert");
+
 class ConsumableUsers {
   constructor() {
     this.users = ["Alice", "Bob"];

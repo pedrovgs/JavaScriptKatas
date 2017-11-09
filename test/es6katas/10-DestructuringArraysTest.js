@@ -1,6 +1,6 @@
 // 10: destructuring - array
 // To do: make all tests pass, leave the assert lines unchanged!
-let assert = require("assert");
+
 describe("destructuring arrays makes shorter code", () => {
   it("extract value from array, e.g. extract 0 into x like so `let [x] = [0];`", () => {
     let [firstValue] = [1];

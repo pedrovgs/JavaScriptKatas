@@ -1,6 +1,6 @@
 // 31: array - `Array.prototype.fill` method
 // To do: make all tests pass, leave the assert lines unchanged!
-let assert = require("assert");
+
 describe("`Array.prototype.fill` can fill up an array with one value", () => {
   it("`fill(0)` will populate `0` into each array element", function() {
     const arr = new Array(3).fill(0);

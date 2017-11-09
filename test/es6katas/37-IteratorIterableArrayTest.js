@@ -3,7 +3,7 @@
 // read more at https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols
 
 // To do: make all tests pass, leave the assert lines unchanged!
-let assert = require("assert");
+
 describe("array is a built-in iterable object", function() {
   const arr = ["a", "B", "see"];
 

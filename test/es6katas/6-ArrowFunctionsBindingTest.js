@@ -1,6 +1,6 @@
 // 6: arrow functions - binding
 // To do: make all tests pass, leave the asserts unchanged!
-let assert = require("assert");
+
 class LexicallyBound {
   getFunction() {
     return () => {

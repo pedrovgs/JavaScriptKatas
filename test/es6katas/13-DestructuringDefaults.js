@@ -1,6 +1,6 @@
 // 13: destructuring - defaults
 // To do: make all tests pass, leave the assert lines unchanged!
-let assert = require("assert");
+
 describe("destructuring can also have default values", () => {
   it("for an empty array", () => {
     const [a = 1] = [];

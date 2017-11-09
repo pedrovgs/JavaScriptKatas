@@ -1,6 +1,6 @@
 // 1: template strings - basics
 // To do: make all tests pass, leave the asserts unchanged!
-let assert = require("assert");
+
 describe("a template string, is wrapped in ` (backticks) instead of ' or \"", function() {
   describe("by default, behaves like a normal string", function() {
     it("just surrounded by backticks", function() {

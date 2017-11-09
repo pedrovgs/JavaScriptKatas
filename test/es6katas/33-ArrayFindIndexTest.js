@@ -1,6 +1,6 @@
 // 33: array - `Array.prototype.findIndex`
 // To do: make all tests pass, leave the assert lines unchanged!
-let assert = require("assert");
+
 describe("`Array.prototype.findIndex` makes finding items in arrays easier", () => {
   it("takes a compare function, returns the index where it returned true", function() {
     const foundAt = [false, true].findIndex(item => item === true);

@@ -3,7 +3,7 @@
 // read more at https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol
 
 // To do: make all tests pass, leave the assert lines unchanged!
-let assert = require("assert");
+
 describe("Symbol", function() {
   it("every `Symbol()` is unique", function() {
     const sym1 = Symbol();

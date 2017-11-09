@@ -1,6 +1,6 @@
 // 4: template strings - String.raw
 // To do: make all tests pass, leave the asserts unchanged!
-let assert = require("assert");
+
 describe("on tagged template strings you can use the `raw` property like so `s.raw`", function() {
   it("the `raw` property accesses the string as it was entered", function() {
     function firstChar(strings) {

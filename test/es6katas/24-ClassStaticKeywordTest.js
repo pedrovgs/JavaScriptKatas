@@ -1,6 +1,6 @@
 // 24: class - static keyword
 // To do: make all tests pass, leave the assert lines unchanged!
-let assert = require("assert");
+
 describe("inside a class you can use the `static` keyword", () => {
   describe("for methods", () => {
     class IntegrationTest {} // eslint-disable-line

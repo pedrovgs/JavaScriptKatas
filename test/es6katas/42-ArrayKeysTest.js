@@ -1,6 +1,6 @@
 // 42: array - `Array.prototype.keys`
 // To do: make all tests pass, leave the assert lines unchanged!
-let assert = require("assert");
+
 describe("`Array.prototype.keys` returns an iterator for all keys in the array", () => {
   it("`keys()` returns an iterator", function() {
     const arr = ["a"];

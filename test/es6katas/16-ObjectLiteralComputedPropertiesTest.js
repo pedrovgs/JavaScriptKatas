@@ -1,6 +1,6 @@
 // 16: object-literal - computed properties
 // To do: make all tests pass, leave the assert lines unchanged!
-let assert = require("assert");
+
 describe("Object literal properties may be computed values", () => {
   it("a computed property `x` needs to be surrounded by `[]`", () => {
     const propertyName = "x";

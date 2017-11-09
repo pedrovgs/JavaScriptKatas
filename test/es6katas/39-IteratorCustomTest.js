@@ -4,7 +4,7 @@
 
 // To do: make all tests pass, leave the assert lines unchanged!
 // Follow the hints of the failure messages!
-let assert = require("assert");
+
 describe("A simple iterable without items inside, implementing the right protocol", () => {
   function iteratorFunction() {
     return {

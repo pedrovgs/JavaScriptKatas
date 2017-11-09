@@ -1,6 +1,6 @@
 // 23: class - accessors
 // To do: make all tests pass, leave the assert lines unchanged!
-let assert = require("assert");
+
 describe("class accessors (getter and setter)", () => {
   it("only a getter is defined like a method prefixed with `get`", () => {
     class MyAccount {
