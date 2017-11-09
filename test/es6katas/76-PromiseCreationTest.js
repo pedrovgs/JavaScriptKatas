@@ -64,9 +64,6 @@ describe("a promise can be created in multiple ways", function() {
 
   describe("`Promise.race()` returns the first settled promise", function() {
     it("if it resolves first, the promises resolves", function(done) {
-      const lateRejectedPromise = new Promise((resolve, reject) =>
-        setTimeout(reject, 100)
-      );
       const earlyResolvingPromise = new Promise(resolve => resolve("1st :)"));
       const promise = Promise.race([earlyResolvingPromise]);
 
