@@ -8,6 +8,7 @@ JavaScript training repository used to practice and learn by solving some common
 
 * [ES6 Katas.](http://es6katas.org/)
 * [FizzBuzz.](http://codingdojo.org/KataFizzBuzz/)
+* [StringCalculator.](http://osherove.com/tdd-kata-1/)
 
 ### Executing tests:
 
@@ -16,7 +17,7 @@ This project contains some tests written using [Mocha](https://mochajs.org/). Yo
 ```
 yarn test //Executes every test.
 yarn test -w //Waits for code changes and executes every test.
-yarn test -g "YOUR_REG_EX" //Executes tests matching with the regex passed as param.
+yarn test -g "String calculator spec*" //Executes tests matching with the regex passed as param.
 ```
 
 ### Packaging:
