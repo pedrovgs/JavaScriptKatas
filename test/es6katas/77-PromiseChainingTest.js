@@ -60,7 +60,7 @@ describe("chaining multiple promises can enhance readability", () => {
     it("any of the things given to `then()` can resolve asynchronously (the real power of Promises)", function() {
       const wordsPromise = Promise.resolve("sentence without an end");
       wordsPromise
-        .then(string => new Promise(resolve => asyncUpperCaseStart))
+        .then(string => new Promise(resolve => asyncUpperCaseStart)) // eslint-disable-line
         .then(
           string =>
             new Promise(resolve =>
