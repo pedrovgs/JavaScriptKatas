@@ -27,18 +27,22 @@ function addWithDelimiters(value, delimiters) {
     return 0;
   }
   const fixedDelimiter = " ";
+  const sum = unifyDelimiters(value, fixedDelimiter, delimiters)
+    .split(fixedDelimiter)
+    .map(value => parseInt(value))
+    .filter(value => Number.isInteger(value))
+    .reduce((acc, value) => parseInt(acc) + parseInt(value));
+  return parseInt(sum);
+}
+
+function unifyDelimiters(value, fixedDelimiter, delimiters) {
   let unifiedDelimitersValue = value;
   delimiters.forEach(d => {
     unifiedDelimitersValue = unifiedDelimitersValue
       .split(d)
       .join(fixedDelimiter);
   });
-  const sum = unifiedDelimitersValue
-    .split(fixedDelimiter)
-    .map(value => parseInt(value))
-    .filter(value => Number.isInteger(value))
-    .reduce((acc, value) => parseInt(acc) + parseInt(value));
-  return parseInt(sum);
+  return unifiedDelimitersValue;
 }
 
 export default add;
