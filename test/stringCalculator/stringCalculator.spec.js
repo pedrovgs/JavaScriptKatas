@@ -6,4 +6,16 @@ describe("String calculator spec", () => {
 
     expect(result).to.equal(0);
   });
+
+  it("should return the number inside the string if it just contains one number", () => {
+    const result = stringCalculator("1");
+
+    expect(result).to.equal(1);
+  });
+
+  it("should return the sum of two consecutive numbers", () => {
+    const result = stringCalculator("1,1");
+
+    expect(result).to.equal(2);
+  });
 });
