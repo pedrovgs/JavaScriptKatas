@@ -18,4 +18,22 @@ describe("String calculator spec", () => {
 
     expect(result).to.equal(2);
   });
+
+  jsc.property(
+    "sum is always greater than zero if the array is not empty and full of positive values",
+    arbitraryNonEmptyStringFullOfPositiveNumbersSeparatedByComas(),
+    input => {
+      return stringCalculator(input) > 0;
+    }
+  );
+
+  function arbitraryNonEmptyStringFullOfPositiveNumbersSeparatedByComas() {
+    return jsc
+      .suchthat(jsc.array(arbitraryPositiveInt()), array => array.length > 0)
+      .smap(array => array.join(","));
+  }
+
+  function arbitraryPositiveInt() {
+    return jsc.int32.smap(x => Math.abs(x));
+  }
 });
