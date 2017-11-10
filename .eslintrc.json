@@ -24,6 +24,9 @@
       "plugin:import/errors",
       "plugin:import/warnings"
     ],
-    "globals": { "assert": true }
+    "globals": { 
+      "assert": true,
+      "expect": true 
+    }
  
   }
