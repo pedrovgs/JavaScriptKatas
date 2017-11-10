@@ -8,6 +8,7 @@ JavaScript training repository used to practice and learn by solving some common
 
 * [ES6 Katas.](http://es6katas.org/)
 * [FizzBuzz.](http://codingdojo.org/KataFizzBuzz/)
+* [StringCalculator.](http://osherove.com/tdd-kata-1/)
 
 ### Executing tests:
 
