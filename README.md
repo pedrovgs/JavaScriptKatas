@@ -7,6 +7,7 @@ JavaScript training repository used to practice and learn by solving some common
 ### List of katas:
 
 * [ES6 Katas.](http://es6katas.org/)
+* [FizzBuzz.](http://codingdojo.org/KataFizzBuzz/)
 
 ### Executing tests:
 
