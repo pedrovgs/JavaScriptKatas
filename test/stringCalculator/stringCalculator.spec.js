@@ -13,24 +13,76 @@ describe("String calculator spec", () => {
     expect(result).to.equal(1);
   });
 
-  it("should return the sum of two consecutive numbers", () => {
+  it("should return the sum of two consecutive numbers separated by ','", () => {
     const result = stringCalculator("1,1");
 
     expect(result).to.equal(2);
   });
 
+  it("should return the sum of two consecutive numbers separated by '\n'", () => {
+    const result = stringCalculator("2\n3");
+
+    expect(result).to.equal(5);
+  });
+
+  it("should return a big list of numbers separated by ','", () => {
+    const result = stringCalculator("1,1,1,1,1,1,1,1,1,1,1");
+
+    expect(result).to.equal(11);
+  });
+
+  it("should return 0 if the delimiter is customized but there are no values", () => {
+    const result = stringCalculator("//x");
+
+    expect(result).to.equal(0);
+  });
+
+  it("should return 1 if the delimiter is customized and the number inside the string is 1", () => {
+    const result = stringCalculator("//x1");
+
+    expect(result).to.equal(1);
+  });
+
+  it("should return the sum of big numbers separated by a custom delimiter", () => {
+    const result = stringCalculator(
+      "//&1665212997&1662109966&139852790&-866795925"
+    );
+
+    expect(result).to.equal(2600379828);
+  });
+
   jsc.property(
-    "sum is always greater than zero if the array is not empty and full of positive values",
+    "result is always greater than zero if the array is not empty and full of positive values",
     arbitraryNonEmptyStringFullOfPositiveNumbersSeparatedByComas(),
     input => {
       return stringCalculator(input) > 0;
     }
   );
 
+  const stringFullOfNumbersSeparatedByARandomDelimiter = jsc
+    .array(jsc.int32)
+    .smap(array => {
+      const delimiter = jsc.sampler(
+        jsc.suchthat(jsc.char, c => !isNumeric(c))
+      )();
+      return `//${delimiter}${array.join(delimiter)}`;
+    });
+
+  jsc.property(
+    "the sum of any number inside the string is always a number",
+    stringFullOfNumbersSeparatedByARandomDelimiter,
+    input => {
+      const result = stringCalculator(input);
+      return isNumeric(result);
+    }
+  );
+
+  function isNumeric(n) {
+    return !isNaN(parseFloat(n)) && isFinite(n);
+  }
+
   function arbitraryNonEmptyStringFullOfPositiveNumbersSeparatedByComas() {
-    return jsc
-      .suchthat(jsc.array(arbitraryPositiveInt()), array => array.length > 0)
-      .smap(array => array.join(","));
+    return jsc.nearray(arbitraryPositiveInt()).smap(array => array.join(","));
   }
 
   function arbitraryPositiveInt() {
