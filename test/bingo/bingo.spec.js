@@ -76,8 +76,8 @@ describe("Bingo spec", () => {
   );
 
   jsc.property(
-    "a card is winner if the 24 values have bein called",
-    arbitraryGame(24),
+    "a card is the winner if its 24 numbers have bein called",
+    arbitraryGame(),
     game => {
       const winnerCard = new Card(game.calledNumbers);
       return isWinnerCard(winnerCard, game);
@@ -106,7 +106,7 @@ describe("Bingo spec", () => {
     expect(isWinnerCard(card, game)).to.equal(false);
   });
 
-  function arbitraryGame(minNumberOfcalledNumbers) {
+  function arbitraryGame(minNumberOfcalledNumbers = 24) {
     return jsc
       .integer(1, Math.min(minNumberOfcalledNumbers, 75))
       .smap(numberOfCalledNumbers =>
