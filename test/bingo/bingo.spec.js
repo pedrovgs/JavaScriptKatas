@@ -1,4 +1,4 @@
-import { Game, card, callNumber } from "../../src/bingo/bingo.js";
+import { Game, card, callNumber, generateCard } from "../../src/bingo/bingo.js";
 
 describe("Bingo spec", () => {
   jsc.property(
@@ -37,7 +37,26 @@ describe("Bingo spec", () => {
     }
   );
 
+  jsc.property(
+    "should generate cards with 24 values between 1 and 75",
+    arbitraryNumberOfGenerateCardInvokations(),
+    numberOfInvokations => {
+      const cards = [...Array(numberOfInvokations).keys()].map(() =>
+        generateCard()
+      );
+      return cards.every(
+        card =>
+          card.numbers.length == 24 &&
+          card.numbers.every(number => number >= 1 && number <= 75)
+      );
+    }
+  );
+
   function arbitraryNumberOfCallNumberInvokations() {
     return jsc.integer(1, 75);
+  }
+
+  function arbitraryNumberOfGenerateCardInvokations() {
+    return jsc.integer(1, 50);
   }
 });

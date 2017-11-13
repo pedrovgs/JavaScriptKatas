@@ -16,7 +16,7 @@ export class Card {
 export function callNumber(game) {
   const availableNumbers = game.availableNumbers;
   const numbersLeft = availableNumbers.length;
-  const calledNumber = availableNumbers[getRandomArbitrary(0, numbersLeft - 1)];
+  const calledNumber = availableNumbers[generateRandomInt(0, numbersLeft - 1)];
   const updatedGame = Object.assign({}, game);
   updatedGame.availableNumbers = updatedGame.availableNumbers.filter(
     number => number !== calledNumber
@@ -24,6 +24,18 @@ export function callNumber(game) {
   updatedGame.calledNumbers.push(calledNumber);
   return [calledNumber, updatedGame];
 }
-function getRandomArbitrary(min, max) {
+
+export function generateCard() {
+  let cardPossibleNumbers = usBingoNumbers.slice();
+  const cardNumbers = [];
+  for (let i = 0; i < 24; i++) {
+    const cardNumberIndex = generateRandomInt(0, cardPossibleNumbers.length);
+    const cardNumber = cardPossibleNumbers[cardNumberIndex];
+    cardPossibleNumbers = cardPossibleNumbers.filter(x => x !== cardNumber);
+    cardNumbers.push(cardNumber);
+  }
+  return new Card(cardNumbers);
+}
+function generateRandomInt(min, max) {
   return parseInt(Math.random() * (max - min) + min);
 }
