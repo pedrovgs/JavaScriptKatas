@@ -23,18 +23,34 @@ function groupBooks(cart) {
 
 function calculatePriceBasedOnTheNumberOfBooks(books) {
   const oneBookPrice = 8.0;
-  const numberOfDifferentBooks = books.length;
+  const numberOfDifferentBooks = books.filter(x => x > 0).length;
   if (numberOfDifferentBooks === 0) {
     return 0.0;
   } else if (numberOfDifferentBooks === 1) {
     return oneBookPrice * books[0];
   } else if (numberOfDifferentBooks === 2) {
-    return 0.0;
+    return (
+      oneBookPrice * 2 * 0.95 +
+      calculatePriceBasedOnTheNumberOfBooks(removeDiscountedBooks(books))
+    );
   } else if (numberOfDifferentBooks === 3) {
-    return 0.0;
+    return (
+      oneBookPrice * 3 * 0.9 +
+      calculatePriceBasedOnTheNumberOfBooks(removeDiscountedBooks(books))
+    );
   } else if (numberOfDifferentBooks === 4) {
-    return 0.0;
+    return (
+      oneBookPrice * 4 * 0.8 +
+      calculatePriceBasedOnTheNumberOfBooks(removeDiscountedBooks(books))
+    );
   } else if (numberOfDifferentBooks === 5) {
-    return 0.0;
+    return (
+      oneBookPrice * 5 * 0.75 +
+      calculatePriceBasedOnTheNumberOfBooks(removeDiscountedBooks(books))
+    );
   }
+}
+
+function removeDiscountedBooks(books) {
+  return books.map(x => x - 1);
 }
