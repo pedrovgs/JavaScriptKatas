@@ -11,8 +11,9 @@ JavaScript training repository used to practice and learn by solving some common
 * [String calculator.](http://osherove.com/tdd-kata-1/)
 * [Find the right triangle.](https://gist.github.com/pedrovgs/32189838165fbe5c9e773ede534b97f4)
 * [Rock paper scissors.](http://agilekatas.co.uk/katas/RockPaperScissors-Kata) 
-### Executing tests:
 * [Bingo.](http://agilekatas.co.uk/katas/Bingo-Kata)
+
+### Executing tests:
 
 This project contains some tests written using [Mocha](https://mochajs.org/). You can easily run the tests by executing:
 
