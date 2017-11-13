@@ -1,11 +1,17 @@
-import { Game, card, callNumber, generateCard } from "../../src/bingo/bingo.js";
+import {
+  Card,
+  Game,
+  callNumber,
+  generateGame,
+  generateCard
+} from "../../src/bingo/bingo.js";
 
 describe("Bingo spec", () => {
   jsc.property(
     "should return a called number between 1 and 75",
     arbitraryNumberOfCallNumberInvokations(),
     numberOfInvokations => {
-      const game = new Game();
+      const game = generateGame();
 
       const executions = [...Array(numberOfInvokations).keys()].map(() => {
         const [calledNumber] = callNumber(game);
@@ -19,7 +25,7 @@ describe("Bingo spec", () => {
     "should return a an updated game with the called number as part of the calledNumbers list and not as part of the available numbers",
     arbitraryNumberOfCallNumberInvokations(),
     numberOfInvokations => {
-      let game = new Game();
+      let game = generateGame();
 
       const calledNumbers = [...Array(numberOfInvokations).keys()].map(() => {
         const result = callNumber(game);
@@ -66,6 +72,8 @@ describe("Bingo spec", () => {
       );
     }
   );
+
+  it("a card is winner if the 24 values have bein called", () => {});
 
   function arbitraryNumberOfCallNumberInvokations() {
     return jsc.integer(1, 75);

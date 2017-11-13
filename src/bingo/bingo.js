@@ -1,9 +1,9 @@
 export const usBingoNumbers = [...Array(75).keys()].map(key => key + 1);
 
 export class Game {
-  constructor() {
-    this.availableNumbers = usBingoNumbers.slice();
-    this.calledNumbers = [];
+  constructor(availableNumbers, calledNumbers) {
+    this.availableNumbers = availableNumbers;
+    this.calledNumbers = calledNumbers;
   }
 }
 
@@ -25,6 +25,10 @@ export function callNumber(game) {
   return [calledNumber, updatedGame];
 }
 
+export function generateGame() {
+  return new Game(usBingoNumbers.slice(), []);
+}
+
 export function generateCard() {
   let cardPossibleNumbers = usBingoNumbers.slice();
   const cardNumbers = [];
@@ -35,6 +39,10 @@ export function generateCard() {
     cardNumbers.push(cardNumber);
   }
   return new Card(cardNumbers);
+}
+
+export function wins(card, game) {
+  return card.numbers.every(number => game.calledNumbers.include(number));
 }
 function generateRandomInt(min, max) {
   return parseInt(Math.random() * (max - min) + min);
