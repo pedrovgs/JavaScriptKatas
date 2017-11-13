@@ -41,9 +41,10 @@ export function generateCard() {
   return new Card(cardNumbers);
 }
 
-export function wins(card, game) {
-  return card.numbers.every(number => game.calledNumbers.include(number));
+export function isWinnerCard(card, game) {
+  return card.numbers.every(number => game.calledNumbers.includes(number));
 }
+
 function generateRandomInt(min, max) {
   return parseInt(Math.random() * (max - min) + min);
 }

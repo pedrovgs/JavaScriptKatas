@@ -3,7 +3,9 @@ import {
   Game,
   callNumber,
   generateGame,
-  generateCard
+  generateCard,
+  usBingoNumbers,
+  isWinnerCard
 } from "../../src/bingo/bingo.js";
 
 describe("Bingo spec", () => {
@@ -73,7 +75,34 @@ describe("Bingo spec", () => {
     }
   );
 
-  it("a card is winner if the 24 values have bein called", () => {});
+  jsc.property(
+    "a card is winner if the 24 values have bein called",
+    arbitraryGame(24),
+    game => {
+      const winnerCard = new Card(game.calledNumbers);
+      return isWinnerCard(winnerCard, game);
+    }
+  );
+
+  function arbitraryGame(minNumberOfcalledNumbers) {
+    return jsc
+      .integer(1, Math.min(minNumberOfcalledNumbers, 75))
+      .smap(numberOfCalledNumbers =>
+        generateGameWithCalledNumbers(numberOfCalledNumbers)
+      );
+  }
+
+  function generateGameWithCalledNumbers(numberOfCalledNumbers) {
+    let availableNumbers = usBingoNumbers.slice();
+    const calledNumbers = [];
+    for (let i = 0; i < numberOfCalledNumbers; i++) {
+      const calledNumber =
+        availableNumbers[generateRandomInt(0, availableNumbers.length - 1)];
+      availableNumbers = availableNumbers.filter(x => x !== calledNumber);
+      calledNumbers.push(calledNumber);
+    }
+    return new Game(availableNumbers, calledNumbers);
+  }
 
   function arbitraryNumberOfCallNumberInvokations() {
     return jsc.integer(1, 75);
@@ -81,5 +110,9 @@ describe("Bingo spec", () => {
 
   function arbitraryNumberOfGenerateCardInvokations() {
     return jsc.integer(1, 50);
+  }
+
+  function generateRandomInt(min, max) {
+    return parseInt(Math.random() * (max - min) + min);
   }
 });
