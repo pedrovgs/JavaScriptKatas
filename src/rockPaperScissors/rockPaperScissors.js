@@ -18,7 +18,9 @@ const player1WinsResults = [
   [Gesture.SCISSORS, Gesture.PAPER],
   [Gesture.PAPER, Gesture.ROCK]
 ];
-const player2WinsResults = player1WinsResults.slice().reverse();
+const player2WinsResults = player1WinsResults.map(game =>
+  game.slice().reverse()
+);
 
 export function whoWins(player1, player2) {
   const match = [player1.gesture, player2.gesture];
