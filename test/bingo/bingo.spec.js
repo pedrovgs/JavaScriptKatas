@@ -84,6 +84,28 @@ describe("Bingo spec", () => {
     }
   );
 
+  it("any card will be the winner if the game calls 75 numbers", () => {
+    let game = generateGame();
+    const card = generateCard();
+
+    for (let i = 0; i < 75; i++) {
+      game = callNumber(game)[1];
+    }
+
+    expect(isWinnerCard(card, game)).to.equal(true);
+  });
+
+  it("won't be winner cards if just 23 numbers are called", () => {
+    let game = generateGame();
+    const card = generateCard();
+
+    for (let i = 0; i < 23; i++) {
+      game = callNumber(game)[1];
+    }
+
+    expect(isWinnerCard(card, game)).to.equal(false);
+  });
+
   function arbitraryGame(minNumberOfcalledNumbers) {
     return jsc
       .integer(1, Math.min(minNumberOfcalledNumbers, 75))
