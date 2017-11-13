@@ -52,6 +52,21 @@ describe("Bingo spec", () => {
     }
   );
 
+  jsc.property(
+    "when cards are generated does not contain repeated values",
+    arbitraryNumberOfGenerateCardInvokations(),
+    numberOfInvokations => {
+      const cards = [...Array(numberOfInvokations).keys()].map(() =>
+        generateCard()
+      );
+      return cards.every(card =>
+        card.numbers.every(number =>
+          card.numbers.filter(x => (x === number.length) === 1)
+        )
+      );
+    }
+  );
+
   function arbitraryNumberOfCallNumberInvokations() {
     return jsc.integer(1, 75);
   }
