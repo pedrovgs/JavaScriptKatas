@@ -16,6 +16,7 @@ JavaScript training repository used to practice and learn by solving some common
 * [Roman numerals.](http://codingdojo.org/kata/RomanNumerals/)
 * [Prime factors.](https://www.rubyplus.com/articles/511-TDD-Beyond-Basics-Prime-Factors-Kata)
 * [Fibonacci.](https://medium.com/@chmeese/fibonacci-kata-93773b30dbb2#.3opu63eoj)
+* [Maxibon.](https://github.com/Karumi/MaxibonKataKotlin)
 
 ### Executing tests:
 
