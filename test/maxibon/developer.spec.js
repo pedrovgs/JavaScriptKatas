@@ -1,4 +1,11 @@
-import { Developer } from "../../src/maxibon/maxibon";
+import {
+  Developer,
+  Pedro,
+  Fran,
+  Davide,
+  Sergio,
+  Jorge
+} from "../../src/maxibon/maxibon";
 
 describe("Developer spec", () => {
   jsc.property(
@@ -20,4 +27,12 @@ describe("Developer spec", () => {
       return dev.name === name;
     }
   );
+
+  it("assign the number of maxibons specified to every developer", () => {
+    expect(Pedro.maxibonsToGrab).to.equal(3);
+    expect(Fran.maxibonsToGrab).to.equal(1);
+    expect(Davide.maxibonsToGrab).to.equal(0);
+    expect(Sergio.maxibonsToGrab).to.equal(2);
+    expect(Jorge.maxibonsToGrab).to.equal(1);
+  });
 });
