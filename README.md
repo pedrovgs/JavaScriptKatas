@@ -14,6 +14,7 @@ JavaScript training repository used to practice and learn by solving some common
 * [Bingo.](http://agilekatas.co.uk/katas/Bingo-Kata)
 * [Potter.](http://codingdojo.org/kata/Potter/)
 * [Roman numerals.](http://codingdojo.org/kata/RomanNumerals/)
+* [Prime factors.](https://www.rubyplus.com/articles/511-TDD-Beyond-Basics-Prime-Factors-Kata)
 
 ### Executing tests:
 
