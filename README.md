@@ -26,6 +26,14 @@ yarn test -w //Waits for code changes and executes every test.
 yarn test -g "String calculator spec*" //Executes tests matching with the regex passed as param.
 ```
 
+If you are using IntelliJ IDEA, WebStorm or any other IDE to run your tests you'll need to configure the mocha execution options adding the following configuration:
+
+```
+--recursive --require ./test/bootload.js --require babel-register
+```
+
+This configuration is the same you can find in the project ``package.json`` configuration.
+
 ### Packaging:
 
 This project uses [webpack](https://webpack.js.org) and [babel](https://babeljs.io) in order to pack a simple ``bundle.js`` file, with all the repository code, fully backward compatible with some old JavaScript versions. If you want to pack all this code into a single file you can easily do it by just running:
