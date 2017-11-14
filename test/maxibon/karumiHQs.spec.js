@@ -1,8 +1,13 @@
-import { Developer, KarumiHQs } from "../../src/maxibon/maxibon";
+import {
+  Developer,
+  KarumiHQs,
+  Pedro,
+  Davide,
+  Sergio,
+  Fran
+} from "../../src/maxibon/maxibon";
 
 describe("KarumiHQs", () => {
-  const chatApi = { sendMessage(message) {} };
-
   it("starts the day with 10 maxibons", () => {
     const office = new KarumiHQs();
 
@@ -16,16 +21,6 @@ describe("KarumiHQs", () => {
       const office = new KarumiHQs();
       office.openFridge(dev);
       return office.maxibonsLeft > 2;
-    }
-  );
-
-  jsc.property(
-    "buy 10 more maxibons if there are less than 3 in the fridge",
-    arbitraryHungryDeveloper(),
-    dev => {
-      const office = new KarumiHQs();
-      office.openFridge(dev);
-      return office.maxibonsLeft === calculateMaxibonsLeft(dev);
     }
   );
 
@@ -67,6 +62,25 @@ describe("KarumiHQs", () => {
     }
   );
 
+  const testScenarios = [
+    [[Pedro], 7],
+    [[Pedro, Davide], 7],
+    [[Pedro, Davide, Fran, Sergio], 4],
+    [[Pedro, Davide, Fran, Sergio, Pedro, Davide, Fran, Sergio], 8]
+  ];
+
+  testScenarios.forEach(testScenario => {
+    let devs = testScenario[0];
+    let expectedMaxibonsLeft = testScenario[1];
+    it(`if ${devs} grab some maxibons, the number of maxibons left is ${expectedMaxibonsLeft}`, () => {
+      const office = new KarumiHQs();
+
+      office.openFridge(devs);
+
+      expect(office.maxibonsLeft).to.equal(expectedMaxibonsLeft);
+    });
+  });
+
   function arbitraryDeveloper() {
     return jsc.integer.smap(maxibonsToGrab => {
       const name = jsc.sampler(jsc.string)();
@@ -90,14 +104,6 @@ describe("KarumiHQs", () => {
       const name = jsc.sampler(jsc.string)();
       return new Developer(name, maxibonsToGrab);
     });
-  }
-
-  function calculateMaxibonsLeft(dev) {
-    let maxibonsLeft = Math.max(0, 10 - dev.maxibonsToGrab);
-    if (maxibonsLeft <= 2) {
-      maxibonsLeft += 10;
-    }
-    return maxibonsLeft;
   }
 
   class MockChat {
