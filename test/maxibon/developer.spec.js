@@ -18,16 +18,6 @@ describe("Developer spec", () => {
     }
   );
 
-  jsc.property(
-    "developer's constructor assigns the name as is",
-    jsc.string,
-    jsc.integer,
-    (name, maxibonsToGrab) => {
-      const dev = new Developer(name, maxibonsToGrab);
-      return dev.name === name;
-    }
-  );
-
   it("assign the number of maxibons specified to every developer", () => {
     expect(Pedro.maxibonsToGrab).to.equal(3);
     expect(Fran.maxibonsToGrab).to.equal(1);
