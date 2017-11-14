@@ -13,6 +13,7 @@ JavaScript training repository used to practice and learn by solving some common
 * [Rock paper scissors.](http://agilekatas.co.uk/katas/RockPaperScissors-Kata) 
 * [Bingo.](http://agilekatas.co.uk/katas/Bingo-Kata)
 * [Potter.](http://codingdojo.org/kata/Potter/)
+* [Roman numerals.](http://codingdojo.org/kata/RomanNumerals/)
 
 ### Executing tests:
 
