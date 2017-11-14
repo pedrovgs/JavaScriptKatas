@@ -15,6 +15,7 @@ JavaScript training repository used to practice and learn by solving some common
 * [Potter.](http://codingdojo.org/kata/Potter/)
 * [Roman numerals.](http://codingdojo.org/kata/RomanNumerals/)
 * [Prime factors.](https://www.rubyplus.com/articles/511-TDD-Beyond-Basics-Prime-Factors-Kata)
+* [Fibonacci.](https://medium.com/@chmeese/fibonacci-kata-93773b30dbb2#.3opu63eoj)
 
 ### Executing tests:
 
