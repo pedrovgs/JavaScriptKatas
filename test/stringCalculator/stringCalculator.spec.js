@@ -59,28 +59,6 @@ describe("String calculator spec", () => {
     }
   );
 
-  const stringFullOfNumbersSeparatedByARandomDelimiter = jsc
-    .array(jsc.int32)
-    .smap(array => {
-      const delimiter = jsc.sampler(
-        jsc.suchthat(jsc.char, c => !isNumeric(c))
-      )();
-      return `//${delimiter}${array.join(delimiter)}`;
-    });
-
-  jsc.property(
-    "the sum of any number inside the string is always a number",
-    stringFullOfNumbersSeparatedByARandomDelimiter,
-    input => {
-      const result = stringCalculator(input);
-      return isNumeric(result);
-    }
-  );
-
-  function isNumeric(n) {
-    return !isNaN(parseFloat(n)) && isFinite(n);
-  }
-
   function arbitraryNonEmptyStringFullOfPositiveNumbersSeparatedByComas() {
     return jsc.nearray(arbitraryPositiveInt()).smap(array => array.join(","));
   }
