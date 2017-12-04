@@ -1,12 +1,16 @@
+function joinNames(name) {
+    name = name.join(" and ");
+    if (name.length === 0) {
+        name = "my friend";
+    }
+    return name;
+}
+
 export function greet(...name) {
   if (isYelling(name)) {
     return `HELLO ${name}!`;
   } else {
-    name = name.join(" and ");
-    if (name.length === 0) {
-      name = "my friend";
-    }
-    return `Hello, ${name}.`;
+    return `Hello, ${joinNames(name)}.`;
   }
 }
 
