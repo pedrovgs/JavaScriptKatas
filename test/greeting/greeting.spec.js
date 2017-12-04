@@ -5,7 +5,7 @@ describe("Greetings kata", () => {
     "says hello using the name passed as parameter",
     jsc.string,
     name => {
-      return `Hello, ${name}` === greet(name);
+      return `Hello, ${name}.` === greet(name);
     }
   );
 });
