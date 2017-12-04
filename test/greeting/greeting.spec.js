@@ -8,4 +8,8 @@ describe("Greetings kata", () => {
       return `Hello, ${name}.` === greet(name);
     }
   );
+
+  it("should say hello to my friend if the input is not defined", () => {
+    expect(greet()).to.deep.equal("Hello, my friend.");
+  });
 });
