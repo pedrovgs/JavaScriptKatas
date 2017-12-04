@@ -28,11 +28,15 @@ describe("Greetings kata", () => {
       return `HELLO ${name}!` === greet(name);
     }
   );
+
+  it("should say hello to every member in the group if we greet more than one person", () => {
+    expect(greet("Jill", "Jane")).to.deep.equal("Hello, Jill and Jane.");
+  });
 });
 
 function arbitraryLowerCaseNames() {
   return jsc.suchthat(
     jsc.asciinestring,
-    string => string !== string.toUpperCase()
+    string => string.toUpperCase() !== string
   );
 }
