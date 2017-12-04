@@ -29,14 +29,38 @@ describe("Greetings kata", () => {
     }
   );
 
-  it("should say hello to every member in the group if we greet more than one person", () => {
+  it("should say hello to every member in the group of two people if we greet more than one person", () => {
     expect(greet("Jill", "Jane")).to.deep.equal("Hello, Jill and Jane.");
+  });
+
+  jsc.property(
+    "should say hello to a bunch of people using Oxford coma",
+    arbitraryListOfNamesGreaterThan(2),
+    names => {
+      let result = greet(...names);
+      let containsOxfordComa = result.indexOf(", and") != -1;
+      let containsAsManyComasAsNames =
+        result.split(", ").length - 1 === names.length;
+      return containsOxfordComa && containsAsManyComasAsNames;
+    }
+  );
+
+  it("should say hello to my three friends using Oxford coma", () => {
+    let result = greet("Amy", "Brian", "Charlotte");
+    expect(result).to.deep.equal("Hello, Amy, Brian, and Charlotte.");
   });
 });
 
 function arbitraryLowerCaseNames() {
   return jsc.suchthat(
     jsc.asciinestring,
-    string => string.toUpperCase() !== string
+    string => `${string}`.toUpperCase() !== string
+  );
+}
+
+function arbitraryListOfNamesGreaterThan(minimumListSize) {
+  return jsc.suchthat(
+    jsc.nearray(arbitraryLowerCaseNames()),
+    names => names.length > minimumListSize
   );
 }
