@@ -48,8 +48,8 @@ function yellingAndRegularGreet(regularNames, yellingNames) {
 }
 
 function isYelling(names) {
-  let isDefined = typeof names !== void 0;
-  let isAnArray = Array.isArray(names);
+  const isDefined = typeof names !== void 0;
+  const isAnArray = Array.isArray(names);
   if (isDefined && isAnArray && names.length > 0) {
     return names.every(name => name === `${name}`.toUpperCase());
   } else if (isDefined && !isAnArray) {
