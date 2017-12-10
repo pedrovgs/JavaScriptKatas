@@ -13,12 +13,34 @@ export function greet(...names) {
   }
 }
 
-function regularGreet(names) {
-  return `Hello, ${joinNames(names)}.`;
+function splitNamesIfNeeded(names) {
+  if (typeof names === void 0 || names.length === 0) {
+    return names;
+  }
+  return names.map(name => splitName(name)).reduce(function(a, b) {
+    return a.concat(b);
+  });
+}
+
+function splitName(name) {
+  if (isAQuote(name)) {
+    name = name.split('"').join("");
+    return [name];
+  } else {
+    return name.split(",");
+  }
+}
+
+function isAQuote(name) {
+  return name.match('"*"') !== null;
 }
 
 function yellingGreet(names) {
   return `HELLO ${names}!`;
+}
+
+function regularGreet(names) {
+  return `Hello, ${joinNames(names)}.`;
 }
 
 function yellingAndRegularGreet(regularNames, yellingNames) {
@@ -48,26 +70,4 @@ function joinNames(names) {
     const firstNames = names.slice(0, names.length - 1).join(", ");
     return `${firstNames}, and ${names[names.length - 1]}`;
   }
-}
-
-function splitNamesIfNeeded(names) {
-  if (typeof names === void 0 || names.length === 0) {
-    return names;
-  }
-  return names
-    .map(name => {
-      if (isAQuote(name)) {
-        name = name.split('"').join("");
-        return [name];
-      } else {
-        return name.split(",");
-      }
-    })
-    .reduce(function(a, b) {
-      return a.concat(b);
-    });
-}
-
-function isAQuote(name) {
-  return name.match('"*"') !== null;
 }
