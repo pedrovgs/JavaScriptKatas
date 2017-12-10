@@ -21,7 +21,7 @@ JavaScript training repository used to practice and learn by solving some common
 
 ### Executing tests:
 
-This project contains some tests written using [Mocha](https://mochajs.org/). You can easily run the tests by executing:
+This project contains some tests written using [Mocha](https://mochajs.org/). You can easily run the tests by executing any of the following commands:
 
 ```
 yarn test //Executes every test.
