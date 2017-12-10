@@ -3,7 +3,7 @@ import {
   Player,
   Result,
   whoWins
-} from "../../src/rockPaperScissors/rockPaperScissors";
+} from "../../src/rock-paper-scissors/rock-paper-scissors";
 
 describe("Rock paper scissors spec", () => {
   const tests = [

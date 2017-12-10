@@ -1,4 +1,4 @@
-import { toRoman, toArabic } from "../../src/romanNumerals/romanNumerals";
+import { toRoman, toArabic } from "../../src/roman-numerals/roman-numerals";
 
 describe("Roman numerals spec", () => {
   jsc.property(

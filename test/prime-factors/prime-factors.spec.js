@@ -1,4 +1,4 @@
-import primeFactors from "../../src/primeFactors/primeFactors";
+import primeFactors from "../../src/prime-factors/prime-factors";
 
 describe("Prime factors spec", () => {
   jsc.property(

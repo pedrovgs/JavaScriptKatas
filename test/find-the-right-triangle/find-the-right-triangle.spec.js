@@ -1,4 +1,4 @@
-import findTheRightTriangles from "../../src/findTheRigthTriangle/findTheRightTriangle";
+import findTheRightTriangles from "../../src/find-the-rigth-triangle/find-the-right-triangle";
 
 describe("Find the right triangle spec", () => {
   it("returns a non empty array because right triangles exist", () => {
