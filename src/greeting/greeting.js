@@ -54,7 +54,20 @@ function splitNamesIfNeeded(names) {
   if (typeof names === void 0 || names.length === 0) {
     return names;
   }
-  return names.map(name => name.split(",")).reduce(function(a, b) {
-    return a.concat(b);
-  });
+  return names
+    .map(name => {
+      if (isAQuote(name)) {
+        name = name.split('"').join("");
+        return [name];
+      } else {
+        return name.split(",");
+      }
+    })
+    .reduce(function(a, b) {
+      return a.concat(b);
+    });
+}
+
+function isAQuote(name) {
+  return name.match('"*"') !== null;
 }

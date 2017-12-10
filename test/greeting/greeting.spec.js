@@ -23,7 +23,7 @@ describe("Greetings kata", () => {
 
   jsc.property(
     "if the user of the lib is yelling, we should yell back",
-    jsc.asciistring.smap(name => name.toUpperCase()),
+    arbitraryLowerCaseRegularName().smap(name => name.toUpperCase()),
     name => {
       return `HELLO ${name}!` === greet(name);
     }
@@ -59,12 +59,20 @@ describe("Greetings kata", () => {
     let result = greet("Amy", "Brian", "Char,lotte");
     expect(result).to.equal("Hello, Amy, Brian, Char, and lotte.");
   });
+
+  it('should handle names rounded with "" as a single name', () => {
+    let result = greet("Bob", '"Charlie, Dianne"');
+    expect(result).to.equal("Hello, Bob and Charlie, Dianne.");
+  });
 });
 
 function arbitraryLowerCaseRegularName() {
   return jsc.suchthat(
     jsc.asciinestring,
-    string => `${string}`.toUpperCase() !== string && string.indexOf(",") === -1
+    string =>
+      `${string}`.toUpperCase() !== string &&
+      string.indexOf(",") === -1 &&
+      string.indexOf('"') === -1
   );
 }
 
