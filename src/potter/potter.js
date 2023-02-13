@@ -52,5 +52,5 @@ function calculatePriceBasedOnTheNumberOfBooks(books) {
 }
 
 function removeDiscountedBooks(books) {
-  return books.map(x => x - 1);
+  return books.map(x => x - 1).filter(x => x > 0);
 }
