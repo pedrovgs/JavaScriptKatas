@@ -73,6 +73,19 @@ describe("Potter spec", () => {
 
     expect(calculatePrice(cart)).to.equal(23.2);
   });
+  
+  it("five different books plus one cost 38,0 EUR", () => {
+    const cart = [
+      HarryPotterBook.BOOK_1,
+      HarryPotterBook.BOOK_2,
+      HarryPotterBook.BOOK_2,
+      HarryPotterBook.BOOK_3,
+      HarryPotterBook.BOOK_4,
+      HarryPotterBook.BOOK_5
+    ];
+
+    expect(calculatePrice(cart)).to.equal(38.0);
+  });
 
   function arbitraryBook() {
     return jsc.suchthat(
